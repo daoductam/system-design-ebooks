@@ -2,6 +2,7 @@ import fitz
 import subprocess
 import os
 import re
+import time
 
 doc = fitz.open('System-design-labs/system-design-questions.pdf')
 
@@ -65,11 +66,24 @@ Văn bản gốc:
 {txt}
 """
     cmd = ['C:\\Users\\tamda\\.gemini\\bin\\agy.exe', '--effort', 'low', '-p', prompt]
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
-    out, err = p.communicate()
-    if p.returncode != 0:
-        raise Exception(f"Failed: {err}")
-    res = out.strip()
+    res = ""
+    for attempt in range(5):
+        try:
+            p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
+            out, err = p.communicate()
+            if p.returncode == 0 and len(out.strip()) > 100:
+                res = out.strip()
+                break
+            else:
+                print(f"  Thử lại lần {attempt+1}/5 do lỗi: {err.strip()[:100]}")
+                time.sleep(3 * (attempt + 1))
+        except Exception as e:
+            print(f"  Thử lại lần {attempt+1}/5 do ngoại lệ: {e}")
+            time.sleep(3 * (attempt + 1))
+    
+    if not res:
+        raise Exception(f"Failed after 5 attempts on Day {item['day']}")
+
     if res.startswith("Dưới đây là") or res.startswith("Chắc chắn rồi"):
         res = res.split("\n", 2)[-1].strip()
         if res.startswith("---"):
