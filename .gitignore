@@ -1,0 +1,7 @@
+# Ignore raw PDF files to prevent hitting GitHub's 100MB file limit
+*.pdf
+
+# Python / temp files
+__pycache__/
+*.pyc
+.system_generated/
