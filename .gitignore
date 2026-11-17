@@ -8,3 +8,4 @@ design.interview.alex/
 __pycache__/
 *.pyc
 .system_generated/
+alex-xu-system-design-volume-2/ocr_cache/
