@@ -1,5 +1,6 @@
 import sys
 import os
+sys.path.insert(0, os.path.abspath("."))
 from scripts.translate_vol2_common import CHAPTERS, process_chapter
 
 if __name__ == "__main__":
