@@ -1,5 +1,8 @@
-# Ignore raw PDF files to prevent hitting GitHub's 100MB file limit
+# Ignore raw PDF files and raw source download folders
 *.pdf
+Grokking-Modern-System-Design-Interview-for-Engineers-Managers/
+System-design-labs/
+design.interview.alex/
 
 # Python / temp files
 __pycache__/

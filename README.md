@@ -13,9 +13,15 @@ Kho lưu trữ gồm 4 bộ tài liệu kinh điển hàng đầu thế giới v
 | STT | Tên Bộ Sách / Tài Liệu | Số Chương / Bài | Định Dạng & Hình Ảnh | Thư Mục Truy Cập |
 |:---:|:---|:---:|:---:|:---:|
 | **01** | **Alex Xu - System Design Interview (Volume 1)**<br>*(Cẩm nang phỏng vấn thiết kế hệ thống từ 0 đến hàng triệu người dùng)* | 16 chương + Lời mở đầu | Markdown + 226 sơ đồ sắc nét | [👉 Xem Tập 1](alex-xu-system-design-volume-1/README.md) |
-| **02** | **Grokking Modern System Design for Engineers & Managers**<br>*(Khóa học kinh điển từ Educative.io: 19 Building Blocks + 13 Hệ thống thực tế)* | 41 chuyên đề | Markdown chuyên sâu | [👉 Xem Grokking](grokking-modern-system-design/README.md) |
-| **03** | **60 Days of System Design Questions**<br>*(60 Ngày luyện câu hỏi tình huống thực chiến & phân tích cạm bẫy)* | 60 ngày | Đề bài + Phương án + Phân tích | [👉 Xem 60 Ngày](60-days-of-system-design/README.md) |
-| **04** | **Alex Xu - System Design Byte-Sized (Volume 0)**<br>*(Kiến thức kiến trúc cô đọng, trực quan dễ nhớ)* | Đầy đủ chủ đề | Flashcards & Cheat Sheets | [👉 Xem Byte-Sized](alex-xu-system-design-byte-sized/README.md) |
+| **02** | **Grokking Modern System Design for Engineers & Managers**<br>*(Khóa học kinh điển từ Educative.io: 16 Building Blocks + 13 Hệ thống thực tế)* | 41 chuyên đề | Markdown + 1.825 sơ đồ kiến trúc | [👉 Xem Grokking](grokking-modern-system-design/README.md) |
+| **03** | **60 Days of System Design Questions**<br>*(60 Ngày luyện câu hỏi tình huống thực chiến & phân tích cạm bẫy)* | 60 ngày thực chiến | 60 kịch bản + 120 sơ đồ | [👉 Xem 60 Ngày](60-days-of-system-design/README.md) |
+| **04** | **Alex Xu - System Design Byte-Sized (Volume 0)**<br>*(Kiến thức kiến trúc cô đọng, trực quan dễ nhớ)* | 7 chuyên đề cốt lõi | Flashcards & 76 sơ đồ minh họa | [👉 Xem Byte-Sized](alex-xu-system-design-byte-sized/README.md) |
+
+---
+
+> [!NOTE]
+> **Về tài liệu Alex Xu - Volume 2:**
+> Tệp PDF gốc của Volume 2 (`system-design-interview VOL 2 BUY.pdf` - 120 MB) là bản scan hình ảnh 100% (427 trang ảnh không có text layer). Để đảm bảo chất lượng văn bản tốt nhất, các chương thuộc Volume 2 có thể được xử lý qua pipeline nhận dạng quang học OCR hoặc nhập liệu chuyên sâu trong các bản cập nhật tiếp theo. Mọi chủ đề trọng điểm của Volume 2 (như S3 Blob Store, Distributed Counter, Map/Uber, Proximity Yelp, Ad Click Event, Distributed Message Queue, v.v.) hiện đã được dịch **nguyên văn đầy đủ và chi tiết hơn rất nhiều** trong bộ **Grokking Modern System Design** và **60 Days of System Design** ngay trong kho lưu trữ này!
 
 ---
 
