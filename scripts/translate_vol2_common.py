@@ -34,7 +34,7 @@ def ocr_single_page(p):
         print(f"Lỗi OCR trang {p}: {e}")
         return p, False
 
-def ensure_ocr_pages(start_p, end_p, max_workers=3):
+def ensure_ocr_pages(start_p, end_p, max_workers=2):
     missing = []
     for p in range(start_p, end_p + 1):
         cache_path = f"alex-xu-system-design-volume-2/ocr_cache/page_{p:03d}.txt"
@@ -104,7 +104,7 @@ CHAPTERS = [
         "id": "chuong-05-metrics-monitoring-and-alerting-system",
         "title": "Chương 5: Hệ Thống Giám Sát Chỉ Số và Cảnh Báo (Metrics Monitoring & Alerting)",
         "start_page": 138,
-        "end_page": 165,
+        "end_page": 162,
         "file": "chuong-05-metrics-monitoring-and-alerting-system.md",
         "prev": "chuong-04-distributed-message-queue.md",
         "next": "chuong-06-ad-click-event-aggregation.md"
@@ -113,8 +113,8 @@ CHAPTERS = [
         "idx": 6,
         "id": "chuong-06-ad-click-event-aggregation",
         "title": "Chương 6: Tổng Hợp Sự Kiện Nhấp Chuột Quảng Cáo (Ad Click Event Aggregation)",
-        "start_page": 166,
-        "end_page": 201,
+        "start_page": 163,
+        "end_page": 198,
         "file": "chuong-06-ad-click-event-aggregation.md",
         "prev": "chuong-05-metrics-monitoring-and-alerting-system.md",
         "next": "chuong-07-hotel-reservation-system.md"
@@ -123,8 +123,8 @@ CHAPTERS = [
         "idx": 7,
         "id": "chuong-07-hotel-reservation-system",
         "title": "Chương 7: Hệ Thống Đặt Phòng Khách Sạn (Hotel Reservation System)",
-        "start_page": 202,
-        "end_page": 231,
+        "start_page": 199,
+        "end_page": 227,
         "file": "chuong-07-hotel-reservation-system.md",
         "prev": "chuong-06-ad-click-event-aggregation.md",
         "next": "chuong-08-distributed-email-service.md"
@@ -133,8 +133,8 @@ CHAPTERS = [
         "idx": 8,
         "id": "chuong-08-distributed-email-service",
         "title": "Chương 8: Dịch Vụ Email Phân Tán (Distributed Email Service)",
-        "start_page": 232,
-        "end_page": 259,
+        "start_page": 228,
+        "end_page": 254,
         "file": "chuong-08-distributed-email-service.md",
         "prev": "chuong-07-hotel-reservation-system.md",
         "next": "chuong-09-s3-like-object-storage.md"
@@ -143,8 +143,8 @@ CHAPTERS = [
         "idx": 9,
         "id": "chuong-09-s3-like-object-storage",
         "title": "Chương 9: Lưu Trữ Đối Tượng Tương Tự S3 (S3-like Object Storage)",
-        "start_page": 260,
-        "end_page": 295,
+        "start_page": 255,
+        "end_page": 289,
         "file": "chuong-09-s3-like-object-storage.md",
         "prev": "chuong-08-distributed-email-service.md",
         "next": "chuong-10-real-time-gaming-leaderboard.md"
@@ -153,8 +153,8 @@ CHAPTERS = [
         "idx": 10,
         "id": "chuong-10-real-time-gaming-leaderboard",
         "title": "Chương 10: Bảng Xếp Hạng Game Thời Gian Thực (Real-time Gaming Leaderboard)",
-        "start_page": 296,
-        "end_page": 321,
+        "start_page": 290,
+        "end_page": 315,
         "file": "chuong-10-real-time-gaming-leaderboard.md",
         "prev": "chuong-09-s3-like-object-storage.md",
         "next": "chuong-11-payment-system.md"
@@ -163,8 +163,8 @@ CHAPTERS = [
         "idx": 11,
         "id": "chuong-11-payment-system",
         "title": "Chương 11: Hệ Thống Thanh Toán (Payment System)",
-        "start_page": 322,
-        "end_page": 347,
+        "start_page": 316,
+        "end_page": 341,
         "file": "chuong-11-payment-system.md",
         "prev": "chuong-10-real-time-gaming-leaderboard.md",
         "next": "chuong-12-digital-wallet.md"
@@ -173,7 +173,7 @@ CHAPTERS = [
         "idx": 12,
         "id": "chuong-12-digital-wallet",
         "title": "Chương 12: Ví Điện Tử (Digital Wallet)",
-        "start_page": 348,
+        "start_page": 342,
         "end_page": 385,
         "file": "chuong-12-digital-wallet.md",
         "prev": "chuong-11-payment-system.md",
@@ -184,7 +184,7 @@ CHAPTERS = [
         "id": "chuong-13-stock-exchange",
         "title": "Chương 13: Sàn Giao Dịch Chứng Khoán (Stock Exchange)",
         "start_page": 386,
-        "end_page": 421,
+        "end_page": 415,
         "file": "chuong-13-stock-exchange.md",
         "prev": "chuong-12-digital-wallet.md",
         "next": "14-loi-ket-va-index.md"
@@ -193,7 +193,7 @@ CHAPTERS = [
         "idx": 14,
         "id": "14-loi-ket-va-index",
         "title": "Lời Kết & Chỉ Mục (Afterword & Index)",
-        "start_page": 422,
+        "start_page": 416,
         "end_page": 427,
         "file": "14-loi-ket-va-index.md",
         "prev": "chuong-13-stock-exchange.md",
@@ -203,14 +203,14 @@ CHAPTERS = [
 
 def translate_chunk_api(chunk_text, img_hints, chapter_title):
     prompt = f"""Bạn là một Principal Software Architect và chuyên gia cao cấp về thiết kế hệ thống phân tán (Distributed Systems).
-Hãy dịch TOÀN BỘ tài liệu kỹ thuật sau trích từ sách 'System Design Interview - Volume 2' của Alex Xu sang tiếng Việt chuẩn kỹ thuật cao cấp, chính xác 100%, định dạng Markdown chuẩn GitHub.
+Hãy dịch TOÀN BỘ tài liệu kiến trúc kỹ thuật sau sang tiếng Việt chuẩn kỹ thuật cao cấp, chính xác 100%, định dạng Markdown chuẩn GitHub.
 
-Chương đang dịch: {chapter_title}
+Chủ đề: {chapter_title}
 
 Yêu cầu nghiêm ngặt:
 1. DỊCH ĐẦY ĐỦ NGUYÊN VĂN 100%, TUYỆT ĐỐI KHÔNG TÓM TẮT, KHÔNG CẮT BỚT BẤT KỲ CÂU, DÒNG, CÔNG THỨC HAY CHI TIẾT KỸ THUẬT NÀO.
 2. Giữ nguyên thuật ngữ kỹ thuật trong ngoặc hoặc dùng song ngữ: High Availability, Scalability, Fault Tolerance, Latency, Throughput, Consistent Hashing, Sharding, Replication Lag, Quorum, Quadtree, Geohash, Write-Ahead Log (WAL), Raft, 2PC, Saga, v.v.
-3. Khi nhắc đến hình ảnh, sơ đồ kiến trúc hoặc minh họa trang sách, hãy chèn đúng cú pháp Markdown hình ảnh:
+3. Khi nhắc đến hình ảnh, sơ đồ kiến trúc hoặc minh họa trang tài liệu, hãy chèn đúng cú pháp Markdown hình ảnh:
 {img_hints}
 4. Định dạng Markdown trực quan, tiêu đề rõ ràng, bảng biểu, callout box GitHub `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, in đậm các ý chính.
 
@@ -224,7 +224,12 @@ Tài liệu kỹ thuật cần dịch:
             p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
             out, err = p.communicate()
             if p.returncode == 0 and len(out.strip()) > 100:
-                res = out.strip()
+                txt = out.strip()
+                if any(bad in txt[:100] for bad in ["Tôi không thể", "Tôi rất tiếc", "I cannot", "I'm sorry"]):
+                    print(f"    Phát hiện câu trả lời từ chối, thử lại lần {attempt+1}/5...")
+                    time.sleep(3 * (attempt + 1))
+                    continue
+                res = txt
                 break
             else:
                 print(f"    Thử lại chunk lần {attempt+1}/5 do lỗi: {err.strip()[:100]}")
